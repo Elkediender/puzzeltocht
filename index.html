@@ -4,36 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puzzel Checker</title>
+  <!-- Google Font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: sans-serif;
-      max-width: 400px;
-      margin: 3em auto;
-      text-align: center;
+    :root {
+      --bg-color: rgb(66, 148, 64);
+      --font-family: 'Montserrat', sans-serif;
     }
-    input {
-      padding: 0.5em;
-      width: 100%;
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      background-color: var(--bg-color);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      margin-bottom: 1.5rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      border: none;
+      border-radius: 0.25rem;
+    }
     button {
-      margin-top: 1em;
-      padding: 0.5em 1em;
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
     }
     #message {
-      margin-top: 1em;
+      margin-top: 1rem;
       font-weight: bold;
+      font-size: clamp(1rem, 3vw, 1.25rem);
     }
   </style>
 </head>
 <body>
-  <h1>Vul je code in</h1>
-  <input id="codeInput" type="text" placeholder="Bijv. PUZZEL123">
-  <button id="submitBtn">Verstuur</button>
-  <div id="message"></div>
+  <div class="container">
+    <h1>Jullie zijn bij het einde van de puzzeltocht!</h1>
+    <p>Het is nu tijd om te kijken of jullie de juiste cijfercode hebben gevonden</p>
+    <p>Vul de code in:</p>
+    <input id="codeInput" type="text" placeholder="Hier dan dus ruimte voor de code">
+    <button id="submitBtn">Verstuur</button>
+    <div id="message"></div>
+  </div>
 
   <script>
-    const secret = 'PUZZEL123'; // je eigen code
+    const secret = 'PUZZEL123'; // vervang door jullie echte code
     document.getElementById('submitBtn').addEventListener('click', () => {
       const guess = document.getElementById('codeInput').value.trim();
       if (guess === secret) {
