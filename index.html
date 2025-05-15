@@ -37,7 +37,7 @@
     document.getElementById('submitBtn').addEventListener('click', () => {
       const guess = document.getElementById('codeInput').value.trim();
       if (guess === secret) {
-        window.location.href = 'gewonnen.html';
+        window.location.href = 'juist.html';
       } else {
         document.getElementById('message').textContent = '❌ Foute code, probeer nog eens.';
       }
