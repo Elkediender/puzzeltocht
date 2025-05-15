@@ -2,12 +2,28 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puzzel Checker</title>
   <style>
-    body { font-family: sans-serif; max-width: 400px; margin: 3em auto; text-align: center; }
-    input { padding: 0.5em; width: 100%; box-sizing: border-box; }
-    button { margin-top: 1em; padding: 0.5em 1em; }
-    #message { margin-top: 1em; font-weight: bold; }
+    body {
+      font-family: sans-serif;
+      max-width: 400px;
+      margin: 3em auto;
+      text-align: center;
+    }
+    input {
+      padding: 0.5em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+    }
+    #message {
+      margin-top: 1em;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -16,16 +32,16 @@
   <button id="submitBtn">Verstuur</button>
   <div id="message"></div>
 
-<script>
-  const secret = 'PUZZEL123';  // hier je echte code invullen
-  document.getElementById('submitBtn').addEventListener('click', () => {
-    const guess = document.getElementById('codeInput').value.trim();
-    if (guess === secret) {
-      window.location.href = 'gewonnen.html';  // ga naar andere pagina
-    } else {
-      document.getElementById('message').textContent = '❌ Foute code, probeer nog eens.';
-    }
-  });
-</script>
+  <script>
+    const secret = 'PUZZEL123'; // je eigen code
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const guess = document.getElementById('codeInput').value.trim();
+      if (guess === secret) {
+        window.location.href = 'gewonnen.html';
+      } else {
+        document.getElementById('message').textContent = '❌ Foute code, probeer nog eens.';
+      }
+    });
+  </script>
 </body>
 </html>
