@@ -7,7 +7,7 @@
 // Het bericht dat je ziet als je de foute code invult staat bij
 // document.getElementById('message').textContent = 'Welke tekst je dan ook maar wil';
 
-const secret = 'PUZZEL123'; // vervang door jullie echte code
+const secret = '7693'; // vervang door jullie echte code
 
 document.getElementById('submitBtn').addEventListener('click', () => {
   const guess = document.getElementById('codeInput').value.trim();
